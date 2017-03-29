@@ -24,11 +24,10 @@
       "ssh_port": 22,
       "ssh_wait_timeout": "10m",
 
-
       "net_device": "virtio-net",
 
       "disk_interface": "virtio",
-      "disk_size": 5000,
+      "disk_size": 6000,
       "format": "qcow2",
 
       "boot_wait": "5s",
