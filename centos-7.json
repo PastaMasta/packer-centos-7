@@ -41,5 +41,22 @@
       "shutdown_command": "shutdown -P now"
 
     }
+  ],
+
+  "provisioners": [
+    {
+      "type": "chef-solo",
+      "install_command": "yum -y install http://repo/software/Chef/chef-12.0.1-1.x86_64.rpm",
+      "cookbook_paths": ["cookbooks"],
+      "run_list": ["chef-base"]
+    }
+  ],
+
+  "post-processors": [
+    {
+      "output": "centos-7.box",
+      "type": "vagrant"
+    }
   ]
+
 }
