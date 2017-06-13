@@ -24,5 +24,5 @@ set -x
 if [[ -z ${build_host} ]] ; then
   bash -c "${cmd}"
 else
-  ssh -X ${build_host} bash -c "${cmd}"
+  ssh -t -X ${build_host} bash -c "${cmd}"
 fi
