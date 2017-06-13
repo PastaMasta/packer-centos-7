@@ -17,6 +17,8 @@ sudo virsh -c qemu:///session vol-delete centos-7_vagrant_box_image_0.img storag
 sudo virsh -c qemu:///session pool-refresh storage
 /usr/bin/vagrant box add centos-7 ~/builds/packer-centos-7/centos-7.box
 /usr/bin/vagrant up
+/usr/bin/vagrant ssh -c 'echo It works!' || exit 1
+/usr/bin/vagrant destroy
 "
 
 set -x
