@@ -4,7 +4,7 @@
     {
       "type": "qemu",
       "accelerator": "kvm",
-      "headless": false,
+      "headless": true,
       "vm_name": "packer-centos-7",
 
       "iso_url": "http://repo/os/CentOS/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso",
