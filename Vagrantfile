@@ -9,8 +9,8 @@ Vagrant.configure('2') do |config|
 
   config.vm.define :base do |base|
 
-    base.vm.hostname = "vagrant-base"
-    base.vm.box = "centos-7"
+    base.vm.hostname = "centos-7-candidate"
+    base.vm.box = "centos-7-candidate"
 
     base.vm.network :public_network,
       :dev => "internal",

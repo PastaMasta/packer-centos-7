@@ -50,7 +50,7 @@
 
   "post-processors": [
     {
-      "output": "centos-7.box",
+      "output": "centos-7-candidate.box",
       "type": "vagrant"
     }
   ]
