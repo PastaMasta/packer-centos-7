@@ -3,7 +3,7 @@
 
 Vagrant.configure('2') do |config|
   config.ssh.insert_key = false
-  config.ssh.private_key_path = '~/.ssh/id_rsa'
+  config.ssh.private_key_path = './id_rsa'
   config.ssh.username = 'vagrant'
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
