@@ -19,7 +19,7 @@ set -x
 
 # Generate key for packer to use during build
 ssh-keygen -f id_rsa -P ''
-openssl rsa -in ~/.ssh/id_rsa -outform pem > id_rsa.pem
+openssl rsa -in ./id_rsa -outform pem > id_rsa.pem
 chmod 600 ./id_rsa.pem
 sed -i -e "/NEW_SSH_KEY/ s%CHANGE_ME_FOR_NEW_SSH_KEY%`cat id_rsa.pub`%" ./httpdir/centos-7-ks.cfg
 
