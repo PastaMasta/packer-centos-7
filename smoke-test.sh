@@ -18,6 +18,11 @@ libvirt_pool="storage"
 
 set -x
 
+# We're using libvirt here boyos
+if ! /usr/bin/vagrant plugin list | grep vagrant-libvirt ; then
+  /usr/bin/vagrant plugin install vagrant-libvirt
+fi
+
 # Tidy up any existing boxes
 /usr/bin/vagrant destroy
 for box in `/usr/bin/vagrant box list | awk '/candidate/{print $1}'` ; do
