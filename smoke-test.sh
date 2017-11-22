@@ -29,6 +29,7 @@ for box in `/usr/bin/vagrant box list | awk '/candidate/{print $1}'` ; do
   /usr/bin/vagrant box remove ${box}
 done
 
+sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
 for img in `sudo virsh -c qemu:///session vol-list ${libvirt_pool}| awk '/candidate/{print $1}'` ; do
   sudo virsh -c qemu:///session vol-delete ${img} --pool ${libvirt_pool}
 done
