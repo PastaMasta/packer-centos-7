@@ -23,6 +23,13 @@ if ! /usr/bin/vagrant plugin list | grep vagrant-libvirt ; then
   /usr/bin/vagrant plugin install vagrant-libvirt
 fi
 
+# If we're not part of libvirt we can't do anything!
+if id --groups --name | grep -q libvirt ; then
+  id
+  echo "I'm not part of the libvirt group!"
+  exit 1
+fi
+
 # Tidy up any existing boxes
 /usr/bin/vagrant destroy
 for box in `/usr/bin/vagrant box list | awk '/candidate/{print $1}'` ; do

@@ -20,9 +20,6 @@ Vagrant.configure('2') do |config|
 
   config.vm.provider :libvirt do |libvirt|
     libvirt.driver = "kvm"
-    libvirt.host = "localhost"
-    libvirt.connect_via_ssh = true
-    libvirt.username = "root"
     libvirt.storage_pool_name = "storage"
   end
 
