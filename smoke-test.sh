@@ -51,7 +51,7 @@ done
 sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
 
 # Add and test
-/usr/bin/vagrant box add ${boxname} ${box}
+/usr/bin/vagrant box add --name ${boxname} ${box}
 /usr/bin/vagrant up
 /usr/bin/vagrant ssh -c 'echo It works!' || exit 1
 /usr/bin/vagrant destroy
