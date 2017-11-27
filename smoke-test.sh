@@ -40,8 +40,8 @@ fi
 
 # Tidy up any existing boxes
 /usr/bin/vagrant destroy
-for box in `/usr/bin/vagrant box list | awk '/candidate/{print $1}'` ; do
-  /usr/bin/vagrant box remove ${box}
+for existing_box in `/usr/bin/vagrant box list | awk '/candidate/{print $1}'` ; do
+  /usr/bin/vagrant box remove ${existing_box}
 done
 
 sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
