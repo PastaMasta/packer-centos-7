@@ -10,11 +10,14 @@ function usage {
 }
 [[ $# -gt 1 ]] && usage $0
 
+# Defaults
 box="centos-7-candidate.box"
+endbox="centos-7-base-`date +'%F-%H:%M'`.box"
+libvirt_pool="storage"
+
 [[ -n $1 ]] && box=$1
 
 boxname="`basename ${box} | sed -e 's/\.box$//'`"
-libvirt_pool="storage"
 
 set -x
 
@@ -57,4 +60,4 @@ sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
 /usr/bin/vagrant destroy
 
 # Move to final output file pre-upload
-mv ${box} ${boxname}-`date +"%F-%T"`.box
+[[ -n $1 ]] || mv ${box} ${endbox}
