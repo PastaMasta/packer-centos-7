@@ -55,3 +55,6 @@ sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
 /usr/bin/vagrant up
 /usr/bin/vagrant ssh -c 'echo It works!' || exit 1
 /usr/bin/vagrant destroy
+
+# Move to final output file pre-upload
+mv ${box} ${boxname}-`date +"%F-%T"`.box
