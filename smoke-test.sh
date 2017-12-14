@@ -61,3 +61,6 @@ sudo virsh -c qemu:///session pool-refresh --pool ${libvirt_pool}
 
 # Move to final output file pre-upload
 [[ -n $1 ]] || mv ${box} ${endbox}
+
+# Record the latest box for future queries
+[[ -n $1 ]] || echo ${endbox} > latest
