@@ -12,7 +12,7 @@ function usage {
 
 # Defaults
 box="centos-7-candidate.box"
-endbox="centos-7-base-`date +'%F-%H:%M'`.box"
+endbox="centos-7-base-`date +'%s'`.box"
 libvirt_pool="storage"
 
 [[ -n $1 ]] && box=$1
